@@ -1,0 +1,39 @@
+Controllers:
+Channel - 1.0
+Show - 1.0
+User - 2.0
+
+
+Models:
+Channel - 1.0
+Show - 1.0
+Showtime - 1.0
+User - 2.0
+
+Home screen will be classic channel guide.
+  Scrollable (does not scroll by itself)
+  How many hours of content available? (thinking 3 hours worth of stuff or scrollable until latest showtime available)
+
+Channel Model
+  name
+  has_many shows (polymorphic?)
+  deletes shows as they are done - no need to go back in time
+
+Show Model
+  research XML files to see how shows are structured
+  find_or_create
+  has_many channels
+  has_many show_times
+
+ShowTime Model (Could play around with 311 algorithms just to showoff with)
+  start time
+  end time v. duration?
+
+
+
+How/when to update channels with showtimes?
+  Should there be ability to update manually?
+    TBD, but if i hookup the automatic updates correctly, then manual updates should only involve adding a user button
+  How far into the future do I give showtimes?
+    daily updates that run and populate midnight to midnight?
+    ** frequent, minor updates (every few hours) **
